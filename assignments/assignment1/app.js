@@ -1,8 +1,11 @@
 (function () {
 	'use strict';
 
-	angular.module('LunchCheckController', [])
-	.controller('ControllerOne', ['$scope', function ($scope) {
+	angular.module('LunchCheck', [])
+	.controller('LunchCheckController', LunchCheckController);
+
+	LunchCheckController.$inject = ['$scope'];
+	function LunchCheckController($scope) {
 		$scope.message = "";
 		$scope.msgClass = "";
 		$scope.btnClick = function () {
@@ -16,7 +19,7 @@
 					$scope.message = "Too much!";
 			}
 		};
-	}])
+	}
 })();
 
 function isEmpty(val)
